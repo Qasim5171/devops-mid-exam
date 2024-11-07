@@ -119,6 +119,26 @@ Environment variables are stored in the `.env` file for secure configuration of 
 This is a basic setup for demonstration purposes. Additional features can be added, such as user authentication, advanced caching strategies, or more complex frontend interactions.
 ```
 
+##Screen shots
+
+![image](https://github.com/user-attachments/assets/1b065f64-d348-4f67-9d7a-34ed9d95f2b8)
+
+
+![image](https://github.com/user-attachments/assets/f67e71c9-a480-492f-b85c-9da5a33281c6)
+
+
+
+![image](https://github.com/user-attachments/assets/61e10790-c1a3-4cd7-a321-03d194f60c59)
+
+
+
+
+
+
+
+
+
+
 ---
 
 
