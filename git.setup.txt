@@ -1,0 +1,135 @@
+```plaintext
+# Git Workflow Documentation
+
+## Step 1: Initialize the Git Repository and Push to GitHub
+
+```bash
+git init
+git add .
+git commit -m "Initial commit"
+git remote add origin <your-github-repo-url>
+git push -u origin main
+```
+
+## Step 2: Create Branches
+
+1. **Create and push the develop branch**:
+   ```bash
+   git checkout -b develop
+   git push -u origin develop
+   ```
+
+2. **Create feature branches for each service**:
+   ```bash
+   # For the database service
+   git checkout -b feature/database-service
+   git push -u origin feature/database-service
+
+   # For the cache service
+   git checkout -b feature/cache-service
+   git push -u origin feature/cache-service
+   ```
+
+## Step 3: Develop Features on Each Branch
+
+### Feature Branch 1: feature/database-service
+
+1. Switch to `feature/database-service`:
+   ```bash
+   git checkout feature/database-service
+   ```
+
+2. Add code to initialize the database and insert a default message.
+   
+3. Commit changes:
+   ```bash
+   git add backend/app.py
+   git commit -m "Add database setup with default message in feature/database-service"
+   git push origin feature/database-service
+   ```
+
+### Feature Branch 2: feature/cache-service
+
+1. Switch to `feature/cache-service`:
+   ```bash
+   git checkout feature/cache-service
+   ```
+
+2. Add caching logic with a 60-second expiry in `app.py`.
+   
+3. Commit changes:
+   ```bash
+   git add backend/app.py
+   git commit -m "Add caching with 60-second expiry in feature/cache-service"
+   git push origin feature/cache-service
+   ```
+
+## Step 4: Merge Feature Branches into Develop
+
+1. Switch to the `develop` branch:
+   ```bash
+   git checkout develop
+   ```
+
+2. Merge each feature branch:
+
+   - **Merge `feature/database-service`**:
+     ```bash
+     git merge feature/database-service
+     ```
+
+   - **Resolve any conflicts** (if necessary), then add and commit resolved files:
+     ```bash
+     git add <conflicted-file>
+     git commit -m "Resolve merge conflicts from feature/database-service"
+     ```
+
+   - **Merge `feature/cache-service`**:
+     ```bash
+     git merge feature/cache-service
+     ```
+
+   - **Resolve any conflicts** again if needed.
+
+3. Push the `develop` branch:
+   ```bash
+   git push origin develop
+   ```
+
+## Step 5: Open a Pull Request
+
+Go to GitHub and open a pull request from `develop` to `main` to simulate the code review and merging process.
+
+## Git Command Summary
+
+```bash
+# Initialize and set up remote
+git init
+git add .
+git commit -m "Initial commit"
+git remote add origin <your-github-repo-url>
+git push -u origin main
+
+# Branch creation and pushing
+git checkout -b develop
+git push -u origin develop
+git checkout -b feature/database-service
+git push -u origin feature/database-service
+git checkout -b feature/cache-service
+git push -u origin feature/cache-service
+
+# Merging feature branches into develop
+git checkout develop
+git merge feature/database-service
+git merge feature/cache-service
+
+# Conflict resolution
+# After editing, add resolved files
+git add <filename>
+git commit -m "Resolved conflicts"
+
+# Push the develop branch after merging
+git push origin develop
+```
+```
+
