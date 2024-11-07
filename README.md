@@ -117,7 +117,7 @@ Environment variables are stored in the `.env` file for secure configuration of 
 ## Project Status
 
 This is a basic setup for demonstration purposes. Additional features can be added, such as user authentication, advanced caching strategies, or more complex frontend interactions.
-```
+
 
 ##Screen shots
 
